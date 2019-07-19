@@ -60,6 +60,7 @@ class RequestsClient(HttpClient):
                                         data=request.parameters,
                                         files=request.files,
                                         timeout=self.timeout)
+        response.encoding = 'utf-8'
 
         return self.convert_response(response, False)
 
